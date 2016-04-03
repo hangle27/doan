@@ -1,0 +1,150 @@
+﻿
+
+input[type=submit], input[type=button], button, input[type=file]
+{
+	height:30px;background-color:#FF3E00; color:white; font-weight:bold; border:0; border-radius:5px; padding: 3px; padding-left: 5px; padding-right: 5px; font-size:8pt;
+}
+
+
+body
+{
+	font-family: 'Segoe UI';
+	font-size: 10pt;
+}
+#menungang
+{ width:980px;background-color:#FFAAAA;}
+
+ul{ list-style:none}
+
+a
+{
+    text-decoration: none;
+    color: #FF3333;
+}
+ul#top
+{
+	float:left;
+	width:980px;
+	position: relative;
+	font-weight:bold;
+	height:30px;
+	text-transform:capitalize;
+	top:0px;
+	left:0px;
+	background-color:#FFAAAA;
+	
+}
+ul#top li
+{
+	float:left;
+	height:30px;
+	padding:0px;
+	border-right:none;
+	display:inline;
+}
+ul#top li a
+{
+	padding:5px 10px 5px 10px;
+	display:block;
+	color:#ffffff;
+	text-decoration:none;
+	height:8px;
+}
+ul#top li:hover {
+background-color:#ebdde2;
+-moz-border-radius:5px 5px 5px 5px;
+
+}
+ul#top li a:hover
+{
+	color:#000;
+	
+}
+
+ul#top li ul.down {
+float: left;
+height: 25px;
+line-height: 25px;
+padding: 0px;
+position: absolute;
+left: 0px; top: 30px;
+display: none;
+width: 980px;
+font-size:10pt;
+font-weight:bold;
+
+}
+
+ul#top li ul.down li {
+border: none;
+}
+
+ul#top li:hover ul {
+display: block;
+}
+
+ul#top li ul a {
+display: inline;
+color:#FF8888;
+}
+
+ul#top li ul a:hover {
+text-decoration:none;
+color:#EA151E;
+}
+
+ul#topnav li ul li:hover {
+background: none;
+}
+/*menu trái*/
+.menutrai{float:left;
+          width:200px;}
+.box{width:200px;float:left;border:1px solid #333333;
+     -moz-border-radius:5px 5px 0 0;}
+.box_title, .m_title
+{
+	width:195px;
+   height:25px;
+   font-size:11pt;
+   padding:5px 0 5px 5px;
+   font-weight:bold;
+   background-color:rgb(255, 128, 128);
+   border-bottom:thin solid #cccccc;
+   color:#fff;
+   -moz-border-radius:5px 5px 0 0;
+}
+.box_1{list-style:none;
+       float:left;
+       margin:0;
+       padding:0;
+       top:0;
+       left:0;
+       width:200px;
+       color:#ffffff}
+.box_1 li
+{
+	margin:0;
+	border-bottom:1px solid #FFAAAA;
+	height:25px;
+	padding:5px 0px 5px 5px;
+	background-color:#FFFFFF;
+}
+.box_1 li a
+{
+	text-decoration:none;
+    font-size:10pt;
+    color:#FF0000;
+}
+.box_1 li a:hover
+{
+	font-weight:bold;
+}
+.box_1 li:hover{background-color:#FFEEEE;}
+#nam{margin-top:5px;}
+#QC{margin-top:5px;}
+#Khach-truy-cap{margin-top:10px;}
+
+/*timkiem*/
+#timkiem{float:left;height:30px;margin:5px 0 5px 0; width:980px;}
+
+

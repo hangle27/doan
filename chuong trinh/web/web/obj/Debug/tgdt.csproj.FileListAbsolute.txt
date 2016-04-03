@@ -1,0 +1,10 @@
+E:\__DOCUMENT__\__PROGRAMMING\@Projects\Hang Le - website ban dien thoai\chuong trinh\web\web\obj\Debug\ResolveAssemblyReference.cache
+E:\__DOCUMENT__\__PROGRAMMING\@Projects\Hang Le - website ban dien thoai\chuong trinh\web\web\bin\web.dll
+E:\__DOCUMENT__\__PROGRAMMING\@Projects\Hang Le - website ban dien thoai\chuong trinh\web\web\bin\web.pdb
+E:\__DOCUMENT__\__PROGRAMMING\@Projects\Hang Le - website ban dien thoai\chuong trinh\web\web\obj\Debug\web.dll
+E:\__DOCUMENT__\__PROGRAMMING\@Projects\Hang Le - website ban dien thoai\chuong trinh\web\web\obj\Debug\web.pdb
+E:\@do an\chuong trinh\web\web\bin\web.dll
+E:\@do an\chuong trinh\web\web\bin\web.pdb
+E:\@do an\chuong trinh\web\web\obj\Debug\ResolveAssemblyReference.cache
+E:\@do an\chuong trinh\web\web\obj\Debug\web.dll
+E:\@do an\chuong trinh\web\web\obj\Debug\web.pdb
