@@ -7,29 +7,33 @@
  <div class="title-giua" runat="server" id="list_title">
      <asp:DataList ID="DataList1" runat="server" DataKeyField="id" 
          DataSourceID="SqlDataSource_LoaiSP" Height="16px" RepeatColumns="4" 
-         ShowFooter="False" ShowHeader="False">
+         ShowFooter="False" ShowHeader="False" 
+         onitemcommand="DataList1_ItemCommand">
          <ItemTemplate>
              <b><asp:Label ID="Label1" runat="server" Text='<%# Eval("name") %>'></asp:Label></b>
          </ItemTemplate>
      </asp:DataList>
      </div>
  <div style="float:left; margin-left:10px">
- <asp:DataList ID="dlAothunu" runat="server" RepeatColumns="4" 
+ <asp:DataList ID="dlist_product" runat="server" RepeatColumns="4" 
                 RepeatDirection="Horizontal" Width="551px" 
-         onitemcommand="dlAothunu_ItemCommand" DataSourceID="SqlDataSource_SanPham">
+          DataSourceID="SqlDataSource_SanPham" 
+         onitemcommand="dlist_product_ItemCommand">
                 <ItemTemplate>
                     <table>
                                 <tr style="text-align: center; color: #1500FF; font-weight: bold; font-size: 15px">
                                     <td style="height: 35px">
-                                        <asp:HyperLink ID="HyperLink1" runat="server" 
+                                        <asp:HyperLink ID="lnk_name" runat="server" 
                                             NavigateUrl='<%# "ProductDetail.aspx?id="+Eval("id") %>' 
                                             Text='<%# Eval("name") %>'></asp:HyperLink>
                                     </td>
                                 </tr>
                                 <tr style="text-align: center">
                                     <td>
+                                    <a class="item_box" href='<%# "ProductDetail.aspx?id="+Eval("id") %>' >
                                         <asp:Image ID="Image1" runat="server" BorderColor="#DDDDDD" BorderWidth="1px" 
                                             ImageUrl='<%# Eval("image") %>' Width="120px" />
+                                    </a>
                    
                                     </td>
                                 </tr>
@@ -42,8 +46,8 @@
                                         Màn hình:
                                         <asp:Label ID="lbMaSP0" runat="server" Text='<%# Eval("lcd") %>'></asp:Label>
                                         <br />
-                                        Pin: <small>
-                                        <asp:Label ID="lbMaSP1" runat="server" Text='<%# Eval("battery") %>'></asp:Label>
+                                        ID: <small>
+                                        <asp:Label ID="lb_id" runat="server" Text='<%# Eval("id") %>'></asp:Label>
                                         </small>
                                     </small></td>
                                 </tr>
@@ -51,13 +55,14 @@
                                     height: 20px">
                                     <td>
                                         Giá:
-                                        <asp:Label ID="lbGia" runat="server" Text='<%# Eval("price") %>'></asp:Label>
+                                        <asp:Label ID="lb_price" runat="server" Text='<%# Eval("price") %>'></asp:Label>
                                         &nbsp;đồng</td>
                                 </tr>
                                 <tr style="text-align: center">
                                     <td>
                                         <asp:ImageButton  ID="imbAddgio" runat="server" ImageUrl="~/Image/Icon/button_red_add_to_cart.jpeg"
-                                            CommandName="Them" />
+                                            CommandName="Them" 
+                                            />
                                     </td>
                                 </tr>
                             </table>

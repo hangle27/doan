@@ -11,6 +11,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using System.Collections.Generic;
+using web.DataObjects;
 
 public partial class Page_ProductGroup : System.Web.UI.Page
 {
@@ -19,8 +20,26 @@ public partial class Page_ProductGroup : System.Web.UI.Page
     {
 
     }
-    protected void dlAothunu_ItemCommand(object source, DataListCommandEventArgs e)
+
+
+        
+    protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
     {
 
+    }
+    protected void dlist_product_ItemCommand(object source, DataListCommandEventArgs e)
+    {
+        Label pid = (Label)e.Item.FindControl("lb_id");
+        HyperLink pname = (HyperLink)e.Item.FindControl("lnk_name");
+        Label price = (Label)e.Item.FindControl("lb_price");
+
+        Cart cart = (Cart)Session["cart"];
+        /* Tao gio hang moi neu chua co*/
+        if (cart == null)
+        {
+            cart = new Cart();
+        }
+        cart.Add(pid.Text, pname.Text, price.Text, 1);
+        Response.Redirect("ShoppingCart.aspx");
     }
 }
