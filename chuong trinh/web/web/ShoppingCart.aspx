@@ -2,12 +2,26 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
         BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" 
-        CellPadding="4">
+        CellPadding="4" onrowcancelingedit="GridView1_RowCancelingEdit" 
+        onrowdeleting="GridView1_RowDeleting" onrowediting="GridView1_RowEditing" 
+        onrowupdated="GridView1_RowUpdated" onrowupdating="GridView1_RowUpdating">
         <RowStyle BackColor="White" ForeColor="#330099" />
         <Columns>
-            <asp:BoundField DataField="product_id" HeaderText="ID" />
-            <asp:BoundField DataField="product_name" HeaderText="Name" />
-            <asp:BoundField DataField="price" HeaderText="Price" />
+            <asp:TemplateField HeaderText="ID">
+                <ItemTemplate>
+                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("product_id") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Name">
+                <ItemTemplate>
+                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("product_name") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Price">
+                <ItemTemplate>
+                    <asp:Label ID="Label4" runat="server" Text='<%# Bind("price") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:TemplateField HeaderText="Quantity">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("quantity") %>'></asp:TextBox>
