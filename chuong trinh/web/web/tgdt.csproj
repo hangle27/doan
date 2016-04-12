@@ -77,6 +77,9 @@
       <DependentUpon>KhungPhai.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="KhungPhai.ascx.designer.cs">
+      <DependentUpon>KhungPhai.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Menungang.ascx.cs">
       <DependentUpon>Menungang.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -157,7 +160,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53162</DevelopmentServerPort>
+          <DevelopmentServerPort>53163</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

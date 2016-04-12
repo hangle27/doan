@@ -18,6 +18,7 @@ namespace web.DataObjects
         public DataTable table;
         public Cart()
         {
+            //Initialaze Cart
             table = new DataTable("cart");
             table.Columns.Add("product_id");
             table.Columns.Add("product_name");
@@ -28,7 +29,28 @@ namespace web.DataObjects
 
         public void Add(Object id, Object name, Object price, Object quantity)
         {
-            table.Rows.Add(new object[]{id, name, price, quantity});
+            //Check if exist
+            if (table.Select("product_id=" + id).Length == 0)
+            {
+                table.Rows.Add(new object[] { id, name, price, quantity });
+            }
+        }
+
+        public int getPurchase()
+        {
+            int money = 0;
+            foreach (DataRow row in table.Rows)
+            {
+                int price = Int32.Parse(row["price"].ToString());
+                int quantity = Int32.Parse(row["quantity"].ToString());
+                money += price * quantity;
+            }
+            return money;
+        }
+
+        public int getProductCount()
+        {
+            return table.Rows.Count;
         }
     }
 }

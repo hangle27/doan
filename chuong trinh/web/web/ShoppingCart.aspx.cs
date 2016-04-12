@@ -28,6 +28,8 @@ namespace web
 
             GridView1.DataSource = ((Cart)Session["cart"]).table;
             GridView1.DataBind();
+
+            l_total.Text = o.getPurchase().ToString();
         }
     }
 }

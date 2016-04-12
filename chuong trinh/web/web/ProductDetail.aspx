@@ -1,15 +1,17 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/NguoiDung.master" AutoEventWireup="true" CodeBehind="ProductDetail.aspx.cs" Inherits="web.ProductDetail" Title="Untitled Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:DataList ID="DataList1" runat="server" DataKeyField="id" 
-        DataSourceID="SqlDataSource1">
+        DataSourceID="SqlDataSource1" onitemcommand="DataList1_ItemCommand">
         <ItemTemplate>
             <br />
             <table style="width:100%;">
                 <tr>
                     <td colspan="3">
                         Thông tin về điện thoại
-                        <asp:Label ID="Label9" runat="server" Text='<%# Eval("name") %>'></asp:Label>
-                    </td>
+                        <asp:Label ID="lnk_name" runat="server" Text='<%# Eval("name") %>'></asp:Label>
+                        &nbsp;(id
+                        <asp:Label ID="lb_id" runat="server" Text='<%# Eval("id") %>'></asp:Label>
+                        )</td>
                 </tr>
                 <tr>
                     <td rowspan="10" style="padding: 10px;">
@@ -76,8 +78,8 @@
                     <td>
                         <b>Giá</b></td>
                     <td style="color: #999966">
-                        <asp:Label ID="Label10" runat="server" Text='<%# Eval("price") + " đồng" %>'></asp:Label>
-                    </td>
+                        <asp:Label ID="lb_price" runat="server" Text='<%# Eval("price") %>'></asp:Label>
+                        &nbsp;đồng</td>
                 </tr>
                 <tr>
                     <td>

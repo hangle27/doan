@@ -36,7 +36,11 @@
         <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
         <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
     </asp:GridView>
-    
+    <br />
+    <br />
+    Tổng cộng :  
+    <asp:Label ID="l_total" runat="server" Text="Label"></asp:Label> đồng
+    <br />
     <br />
     <asp:Button ID="Button1" runat="server" Text="Thanh toán" />
         <br />
