@@ -10,15 +10,19 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using DataObjects;
 
 public partial class UserControl_MenuTrai : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        DataTable t = DataBase.Database.query("SELECT * FROM manufacture;");
-        for (int i = 0; i < t.Rows.Count; i++)
+        Cart cart = (Cart)Session["cart"];
+        /* Tao gio hang moi neu chua co*/
+        if (cart == null)
         {
-            
+            cart = new Cart();
         }
+        t_Size.Text = cart.getProductCount().ToString();
+        t_Total.Text = cart.getPurchase().ToString();
     }
 }

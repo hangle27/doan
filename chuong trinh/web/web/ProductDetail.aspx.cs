@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Xml.Linq;
-using web.DataObjects;
+using DataObjects;
 
 namespace web
 {
@@ -32,6 +32,7 @@ namespace web
             if (cart == null)
             {
                 cart = new Cart();
+                Session["cart"] = cart;
             }
             cart.Add(pid.Text, pname.Text, price.Text, 1);
             Response.Redirect("ShoppingCart.aspx");

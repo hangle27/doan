@@ -1,12 +1,18 @@
-﻿using DataObjects;
-using System;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Xml.Linq;
+using DataObjects;
 
-namespace GSUpload.page
+namespace web
 {
     public partial class Auth : System.Web.UI.Page
     {
@@ -72,6 +78,7 @@ namespace GSUpload.page
                         else
                         {
                             form_register.Visible = true;
+
                         }
                         break;
                     default:
@@ -87,11 +94,16 @@ namespace GSUpload.page
                 form_register.Visible = true;
             }
 
-
+            if (usr == null || usr == "")
+            {
+                return;
+            }
             if (Account.isLoggedIn(usr))
             {
+                Response.Redirect("Default.aspx");
+
                 String realname = "Undefined";
-                realname = DataObjects.Account.getCurrentUser().Name;
+                realname = Account.getCurrentUser().Name;
                 Greeeting.Text = "Hello, " + realname + "!, <a href='?action=logout' >Đăng xuất</a>";
                 form_login.Visible = false;
                 form_register.Visible = false;
@@ -105,6 +117,10 @@ namespace GSUpload.page
             //SitePreLoad.init();
             form_login.Visible = false;
             form_register.Visible = false;
+
+            reg_email.Value = WebAPI.Page._GET("email");
+            reg_realname.Value = WebAPI.Page._GET("name");
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)

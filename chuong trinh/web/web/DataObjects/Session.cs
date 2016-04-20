@@ -17,7 +17,7 @@ namespace DataObjects
                 {
                     { "value", value},
                     { "account_id", account_id},
-                    { "time", DateTime.Now.ToLongDateString()},
+                    { "time", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")},
                     { "device", WebAPI.Page.getDevice()}
                 });
             return value;

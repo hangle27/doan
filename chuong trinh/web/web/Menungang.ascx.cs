@@ -15,6 +15,26 @@ public partial class UserControl_Menungang : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        String usr = WebAPI.Page.getCookie("username");
+        if (usr == null)
+        {
+            usr = "";
+        }
+
+        if (DataObjects.Account.isLoggedIn(usr))
+        {
+            String realname = "Undefined";
+            realname = DataObjects.Account.getCurrentUser().Name;
+            greeting.HRef = "SessionManager.aspx";
+            greeting.InnerHtml = "Xin chào, " + realname + " !";
+            o_logout.Visible = true;
+        }
+        else
+        {
+            o_logout.Visible = false;
+        }
+
+
     }
 
 }

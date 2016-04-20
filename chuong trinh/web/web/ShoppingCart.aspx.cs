@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Xml.Linq;
-using web.DataObjects;
+using DataObjects;
 
 namespace web
 {
@@ -26,10 +26,22 @@ namespace web
             }
 
             Session["cart"] = o;
+            
 
+
+
+            if (GridView1.EditIndex == -1)
+            {
+                UpdateView();
+            }
+
+           
+        }
+
+        public void UpdateView()
+        {
             GridView1.DataSource = ((Cart)Session["cart"]).table;
             GridView1.DataBind();
-
             l_total.Text = o.getPurchase().ToString();
         }
 
@@ -43,8 +55,22 @@ namespace web
         {
             GridViewRow row = GridView1.Rows[e.RowIndex];
             object a = e.NewValues;
-            o.table.Rows[e.RowIndex]["quantity"] = ((TextBox)(row.Cells[3].FindControl("TextBox1"))).Text;
+
+            String p_id = o.table.Rows[e.RowIndex]["product_id"].ToString();
+            int new_q = int.Parse(((TextBox)(row.Cells[3].FindControl("TextBox_q"))).Text);
+
+            int kq = o.setQuantity(p_id, new_q);
+            if (kq < new_q)
+            {
+                l_msg.Text = "Không đủ hàng thể thêm với số lượng đó.";
+            }
+            else
+            {
+                l_msg.Text = "";
+            }
+            
             GridView1.EditIndex = -1;
+            UpdateView();
             GridView1.DataBind();
         }
 
@@ -66,6 +92,16 @@ namespace web
         {
             GridView1.EditIndex = -1;
             GridView1.DataBind();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Purchase.aspx");
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

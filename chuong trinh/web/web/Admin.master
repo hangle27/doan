@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="UserControl_Admin" Codebehind="Admin.master.cs" %>
+
+<%@ Register src="Menungang.ascx" tagname="Menungang" tagprefix="uc1" %>
+<%@ Register src="MenuTrai.ascx" tagname="MenuTrai" tagprefix="uc2" %>
+<%@ Register src="KhungPhai.ascx" tagname="KhungPhai" tagprefix="uc3" %>
+<%@ Register src="Footer.ascx" tagname="Footer" tagprefix="uc4" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    
+    <asp:ContentPlaceHolder ID="page_title" runat="server" >
+        <title>Untitled Page</title>
+    </asp:ContentPlaceHolder>
+    <link href="web/css/ShopOnline.css" rel="Stylesheet" type="text/css" />
+    <link href="web/css/Menu.css" rel="stylesheet" type="text/css" />
+    <link href="web/css/QuanTri.css" rel="Stylesheet" type="text/css" />
+    <script src="web/js/jquery-1.5.1.js" type="text/javascript"></script>
+    <script src="web/js/JScript.js" type="text/javascript"></script>
+   
+</head>
+<body>
+    <form id="form1" runat="server">
+
+            <div style="width:980px; margin: auto auto;">
+                <div style="width:100%;">
+                    <div style="background-color:#fcdfff;width:980px;border:1px solid #333;">
+                        <uc1:Menungang ID="Menungang2" runat="server" />
+                    </div>
+                </div>
+                <div style="width:100%; margin-top: 10px;">
+                    <div style="width: 25%;float:left;">
+                <div style="width:200px;float:left; margin:5px auto 0 auto;">
+         <div id="menutrai">
+            <div class="khungtrai-top">
+                Menu</div>
+            <ul>
+                <li><a href="OrderManager.aspx">Quản lý đơn hàng</a></li>
+                <li><a href="UserManager.aspx">Quản lý người dùng</a></li>
+                <li><a href="ManufactureManager.aspx">Quản lý nhà sản xuất</a></li>
+                <li><a href="ProductManager.aspx">Quản lý sản phẩm</a>
+                    <ul>
+                        <li><a href="ProductManager.aspx">Cập nhật sản phẩm</a></li>
+                        <li><a href="ProductEditor.aspx" >Thêm sản phẩm mới</a></li>         
+                    </ul>
+                </li>
+                <li><a href="CustomerManager.aspx">Quản lý Khách hàng</a></li>  
+            </ul>
+        </div>
+            
+        </div>
+            </div>
+            <div style="float: left; width: 75%;">
+                <div style="padding: 5px; padding-right:0px; padding-top:0;" >
+                    <div style="background: #fff; padding: 10px; min-height: 500px;">
+                        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="clear:both;" ></div>
+       <div style="float:left; background: #fff; width: 100%;">
+            <uc4:Footer ID="Footer2" runat="server" />
+       </div> 
+    </div> 
+      
+       
+       
+       
+      
+  </form>
+</body>
+</html>

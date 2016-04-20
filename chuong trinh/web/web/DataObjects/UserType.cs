@@ -8,16 +8,13 @@ namespace DataObjects
     public class UserType
     {
 
-        public static String Customer = "hs";
-        public static String Employee = "gv";
-        public static String Admin = "ad";
+        public static String Customer = "3";
+        public static String Employee = "2";
+        public static String Admin = "1";
 
         public static String getByUserName(String userName)
         {
-            if (userName == null || userName == "")
-                return "##";
-            String type = userName.Substring(0, 2);
-            return type;
+            return "";
         }
     }
 }

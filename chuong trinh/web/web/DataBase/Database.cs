@@ -192,5 +192,10 @@ namespace DataBase
             query(sql);
             return query(deleted);
         }
+
+        internal static void set(string p, Dictionary<string, string> dictionary)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

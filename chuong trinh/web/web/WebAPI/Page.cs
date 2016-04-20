@@ -67,7 +67,47 @@ namespace WebAPI
         public static String getDevice()
         {
             System.Web.HttpBrowserCapabilities browser = HttpContext.Current.Request.Browser;
-            return browser.Browser + " " + browser.Version + " / " + browser.Platform;
+            return browser.Browser + " " + browser.Version + " / " + getPlatform(getUserAgent());
+        }
+
+        public static String getPlatform(String ua)
+        {
+            if (ua.Contains("Windows NT 5.1") || ua.Contains("Windows NT 5.2"))
+                return "Windows XP";
+
+            if (ua.Contains("Windows NT 6.0"))
+                return "Windows Vista";
+
+            if (ua.Contains("Windows NT 6.1"))
+                return "Windows 7";
+
+            if (ua.Contains("Windows NT 6.2"))
+                return "Windows 8";
+
+            if (ua.Contains("Windows NT 6.3"))
+                return "Windows 8.1";
+
+            if (ua.Contains("Windows NT 10"))
+                return "Windows 10";
+
+            //fallback to basic platform:
+            return getDevice();
+        }
+
+
+        /// <summary>
+        /// Get query string
+        /// </summary>
+        /// <param name="name">Name of query</param>
+        /// <returns>Value by name</returns>
+        public static String _GET(String name)
+        {
+            String value = HttpContext.Current.Request.QueryString[name];
+            if(value == null)
+            {
+                value = "";
+            }
+            return value;
         }
 
     }

@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using System.Collections.Generic;
-using web.DataObjects;
+using DataObjects;
 
 public partial class Page_ProductGroup : System.Web.UI.Page
 {
@@ -38,6 +38,7 @@ public partial class Page_ProductGroup : System.Web.UI.Page
         if (cart == null)
         {
             cart = new Cart();
+            Session["cart"] = cart;
         }
         cart.Add(pid.Text, pname.Text, price.Text, 1);
         Response.Redirect("ShoppingCart.aspx");

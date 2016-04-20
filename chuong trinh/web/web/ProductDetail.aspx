@@ -1,4 +1,9 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/NguoiDung.master" AutoEventWireup="true" CodeBehind="ProductDetail.aspx.cs" Inherits="web.ProductDetail" Title="Untitled Page" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="page_title" runat="server" >
+    <title>Chi tiết sản phẩm</title>
+</asp:Content>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:DataList ID="DataList1" runat="server" DataKeyField="id" 
         DataSourceID="SqlDataSource1" onitemcommand="DataList1_ItemCommand">
@@ -69,9 +74,11 @@
                 </tr>
                 <tr>
                     <td>
-                        <b>Mô tả</b></td>
+                        <b>Tình trạng</b></td>
                     <td style="color: #999966">
-                        <asp:Label ID="Label8" runat="server" Text='<%# Eval("description") %>'></asp:Label>
+                        <asp:Label ID="Label8" runat="server" 
+                            Text='<%# ((int)Eval("quantity")) > 0 ? "Còn " + Eval("quantity") + " cái" : "Hết hàng" %>' 
+                            ForeColor='<%# ((int)Eval("quantity")) > 0 ? System.Drawing.Color.Green : System.Drawing.Color.Red %>'></asp:Label>
                     </td>
                 </tr>
                 <tr>
@@ -86,7 +93,9 @@
                         &nbsp;</td>
                     <td style="color: #999966">
                         <asp:ImageButton ID="imbAddgio" runat="server" CommandName="Them" 
-                            ImageUrl="~/Image/Icon/button_red_add_to_cart.jpeg" />
+                            ImageUrl="~/Image/Icon/button_red_add_to_cart.jpeg" 
+                            Enabled='<%# ((int)Eval("quantity")) > 0 %>' 
+                            Visible='<%# ((int)Eval("quantity")) > 0 %>' />
                     </td>
                 </tr>
             </table>

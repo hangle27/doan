@@ -1,5 +1,5 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Menungang.ascx.cs" Inherits="UserControl_Menungang" %>
-<link href="../CSS/Menu.css" rel="Stylesheet" type="text/css"/>
+﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="UserControl_Menungang" Codebehind="Menungang.ascx.cs" %>
+
 <div style="width:980px">
 <div class="banner">
     <asp:Image ImageUrl="~/Image/banner4.jpg" runat="server" ID="anhnen" Width="980px" Height="150px" />
@@ -7,10 +7,11 @@
 <div id="menungang">
     <ul id="top" style="padding: 0">
         <li><a href="Default.aspx"title="menuitem1">trang chủ</a></li>
-        <li><a href="#" title="menuitem2">giới thiệu</a></li>
-        <li id="o_login" runat="server"><a href="./DangNhap.aspx" title="menuitem6">Đăng nhập</a></li>
+        <li><a href="#">giới thiệu</a></li>
+        <li id="o_login" runat="server"><a href="./Account.aspx?action=login" id="greeting" runat="server">Đăng nhập</a></li>
+        <li><a href="./Admin.aspx" >Quản trị</a></li>
         <li id="o_logout" runat="server">
-            <a href="../GiaoDien/DangXuat.aspx" >Đăng xuất</a>
+            <a href="./Account.aspx?action=logout" >Đăng xuất</a>
         </li>
     </ul>
 

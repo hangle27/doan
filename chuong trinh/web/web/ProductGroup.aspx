@@ -1,4 +1,9 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/NguoiDung.master" AutoEventWireup="true" CodeFile="ProductGroup.aspx.cs" Inherits="Page_ProductGroup" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/NguoiDung.master" AutoEventWireup="true" Inherits="Page_ProductGroup" Codebehind="ProductGroup.aspx.cs" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="page_title" runat="server" >
+    <title>Danh sách sản phẩm</title>
+</asp:Content>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="khung-giua">
@@ -14,11 +19,13 @@
          </ItemTemplate>
      </asp:DataList>
      </div>
- <div style="float:left; margin-left:10px">
+ <div style="padding: 5px;">
  <asp:DataList ID="dlist_product" runat="server" RepeatColumns="4" 
-                RepeatDirection="Horizontal" Width="551px" 
+                RepeatDirection="Horizontal" Width="100%" 
           DataSourceID="SqlDataSource_SanPham" 
-         onitemcommand="dlist_product_ItemCommand">
+         onitemcommand="dlist_product_ItemCommand" BorderColor="#999966">
+                <SeparatorStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" 
+                    Font-Strikeout="False" Font-Underline="False" />
                 <ItemTemplate>
                     <table>
                                 <tr style="text-align: center; color: #1500FF; font-weight: bold; font-size: 15px">
@@ -60,8 +67,8 @@
                                 </tr>
                                 <tr style="text-align: center">
                                     <td>
-                                        <asp:ImageButton  ID="imbAddgio" runat="server" ImageUrl="~/Image/Icon/button_red_add_to_cart.jpeg"
-                                            CommandName="Them" 
+                                        <asp:ImageButton  ID="imbAddgio" runat="server" ImageUrl="~/web/images/res/add-to-cart-button-blue.png"
+                                            CommandName="Them" Width="120px" 
                                             />
                                     </td>
                                 </tr>

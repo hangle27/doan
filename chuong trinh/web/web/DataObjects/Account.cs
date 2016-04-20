@@ -16,9 +16,9 @@ namespace DataObjects
     {
 
 
-        public static String Login_URL = "Account?action=login";
-        public static String Logout_URL = "Account?action=logout";
-        public static String Register_URL = "Account?action=register";
+        public static String Login_URL = "Account.aspx?action=login";
+        public static String Logout_URL = "Account.aspx?action=logout";
+        public static String Register_URL = "Account.aspx?action=register";
 
         public static String tableName = "account";
 
@@ -78,12 +78,16 @@ namespace DataObjects
         public static bool isLoggedIn(String username)
         {
             DataTable t = DataBase.Database.get("account", "*", "username='" + username + "'");
-            String account_id = t.Rows[0]["id"].ToString();
-            String session = WebAPI.Page.getCookie("session");
-            if (session == null)
-                session = "";
-            if (Session.exists(account_id, session))
-                return true;
+            if (t.Rows.Count > 0)
+            {
+                String account_id = t.Rows[0]["id"].ToString();
+
+                String session = WebAPI.Page.getCookie("session");
+                if (session == null)
+                    session = "";
+                if (Session.exists(account_id, session))
+                    return true;
+            }
             return false;
         }
 
@@ -197,7 +201,10 @@ namespace DataObjects
 
         public static String getCurrentUserName()
         {
-            return WebAPI.Page.getCookie("username");
+            String userName = WebAPI.Page.getCookie("username");
+            if (userName == null)
+                userName = "";
+            return userName;
         }
 
 

@@ -60,6 +60,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessDenied.aspx.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessDenied.aspx.designer.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account.aspx.cs">
       <DependentUpon>Account.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -67,11 +74,43 @@
     <Compile Include="Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.master.cs">
+      <DependentUpon>Admin.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.master.designer.cs">
+      <DependentUpon>Admin.master</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerRegister.aspx.cs">
+      <DependentUpon>CustomerRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerRegister.aspx.designer.cs">
+      <DependentUpon>CustomerRegister.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\Database.cs" />
     <Compile Include="DataObjects\Cart.cs" />
+    <Compile Include="DataObjects\CartCart.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Footer.ascx.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
     </Compile>
     <Compile Include="KhungPhai.ascx.cs">
       <DependentUpon>KhungPhai.ascx</DependentUpon>
@@ -80,15 +119,28 @@
     <Compile Include="KhungPhai.ascx.designer.cs">
       <DependentUpon>KhungPhai.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ManufactureManager.aspx.cs">
+      <DependentUpon>ManufactureManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManufactureManager.aspx.designer.cs">
+      <DependentUpon>ManufactureManager.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Menungang.ascx.cs">
       <DependentUpon>Menungang.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menungang.ascx.designer.cs">
+      <DependentUpon>Menungang.ascx</DependentUpon>
     </Compile>
     <Compile Include="MenuTrai.ascx.cs">
       <DependentUpon>MenuTrai.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DataBase\MSSQL.cs" />
+    <Compile Include="MenuTrai.ascx.designer.cs">
+      <DependentUpon>MenuTrai.ascx</DependentUpon>
+    </Compile>
     <Compile Include="NguoiDung.master.cs">
       <DependentUpon>NguoiDung.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -98,6 +150,30 @@
     <Compile Include="DataObjects\Session.cs" />
     <Compile Include="DataObjects\User.cs" />
     <Compile Include="DataObjects\UserType.cs" />
+    <Compile Include="NguoiDung.master.designer.cs">
+      <DependentUpon>NguoiDung.master</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetailManager.aspx.cs">
+      <DependentUpon>OrderDetailManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderDetailManager.aspx.designer.cs">
+      <DependentUpon>OrderDetailManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderManager.aspx.cs">
+      <DependentUpon>OrderManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderManager.aspx.designer.cs">
+      <DependentUpon>OrderManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderSuccess.aspx.cs">
+      <DependentUpon>OrderSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderSuccess.aspx.designer.cs">
+      <DependentUpon>OrderSuccess.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProductDetail.aspx.cs">
       <DependentUpon>ProductDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -105,12 +181,43 @@
     <Compile Include="ProductDetail.aspx.designer.cs">
       <DependentUpon>ProductDetail.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ProductEditor.aspx.cs">
+      <DependentUpon>ProductEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductEditor.aspx.designer.cs">
+      <DependentUpon>ProductEditor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProductGroup.aspx.cs">
       <DependentUpon>ProductGroup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="ProductGroup.aspx.designer.cs">
+      <DependentUpon>ProductGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManager.aspx.cs">
+      <DependentUpon>ProductManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductManager.aspx.designer.cs">
+      <DependentUpon>ProductManager.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataBase\SQLite.cs" />
+    <Compile Include="Purchase.aspx.cs">
+      <DependentUpon>Purchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Purchase.aspx.designer.cs">
+      <DependentUpon>Purchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SessionManager.aspx.cs">
+      <DependentUpon>SessionManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SessionManager.aspx.designer.cs">
+      <DependentUpon>SessionManager.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ShoppingCart.aspx.cs">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -118,28 +225,53 @@
     <Compile Include="ShoppingCart.aspx.designer.cs">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebAPI\Encrypt.cs" />
-    <Compile Include="WebAPI\Page.cs" />
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="UserManager.aspx.cs">
+      <DependentUpon>UserManager.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="UserManager.aspx.designer.cs">
+      <DependentUpon>UserManager.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebAPI\Coversation.cs" />
+    <Compile Include="WebAPI\Encrypt.cs" />
+    <Compile Include="WebAPI\Page.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Account.aspx" />
-    <Content Include="css\Menu.css" />
-    <Content Include="css\QuanTri.css" />
-    <Content Include="css\ShopOnline.css" />
-    <Content Include="js\jquery-1.5.1.js" />
-    <Content Include="js\JScript.js" />
+    <Content Include="web\css\Menu.css" />
+    <Content Include="web\css\QuanTri.css" />
+    <Content Include="web\css\ShopOnline.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="web\js\jquery-1.5.1.js" />
+    <Content Include="web\js\JScript.js" />
     <Content Include="NguoiDung.master" />
     <Content Include="ProductDetail.aspx" />
+    <Content Include="ProductEditor.aspx" />
     <Content Include="ProductGroup.aspx" />
+    <Content Include="ProductManager.aspx" />
     <Content Include="ShoppingCart.aspx" />
-    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccessDenied.aspx" />
+    <Content Include="Account.aspx" />
+    <Content Include="Admin.aspx" />
+    <Content Include="Admin.master" />
+    <Content Include="CustomerRegister.aspx" />
+    <Content Include="ManufactureManager.aspx" />
+    <Content Include="OrderDetailManager.aspx" />
+    <Content Include="OrderManager.aspx" />
+    <Content Include="OrderSuccess.aspx" />
+    <Content Include="Purchase.aspx" />
+    <Content Include="SessionManager.aspx" />
+    <Content Include="UserManager.aspx" />
+    <Content Include="web\images\products\7000007.png" />
+    <Content Include="web\images\products\7000008.png" />
+    <Content Include="web\images\products\7000009.png" />
+    <Content Include="web\images\products\851587_369239346556147_162929011_n.gif" />
+    <Content Include="web\images\products\iphone-6-64gb-400x460.png" />
+    <Content Include="web\images\products\iphone-6s-rosegold-400x450-400x450.png" />
+    <Content Include="web\images\products\Screenshot_124.png" />
+    <Content Include="web\images\qc\farmheroessaga.gif" />
+    <Content Include="web\images\res\add-to-cart-button-blue.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -160,7 +292,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53163</DevelopmentServerPort>
+          <DevelopmentServerPort>53164</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
