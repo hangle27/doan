@@ -38,7 +38,7 @@ public partial class Page_ProductGroup : System.Web.UI.Page
             );
         }
         */
-
+        /*
         DataTable t = Database.get("product", "*");
         for (int i = 0; i < t.Rows.Count; i++)
         {
@@ -55,6 +55,7 @@ public partial class Page_ProductGroup : System.Web.UI.Page
                 }
             );
         }
+        */
 
 
     }
