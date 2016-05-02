@@ -25,9 +25,10 @@ public partial class UserControl_Menungang : System.Web.UI.UserControl
         {
             String realname = "Undefined";
             realname = DataObjects.Account.getCurrentUser().Name;
-            greeting.HRef = "SessionManager.aspx";
+            greeting.HRef = "Profile.aspx";
             greeting.InnerHtml = "Xin chào, " + realname + " !";
             o_logout.Visible = true;
+            o_regedit.Visible = false;
         }
         else
         {

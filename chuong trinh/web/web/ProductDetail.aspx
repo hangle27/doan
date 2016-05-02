@@ -109,4 +109,63 @@ WHERE product.id=@1">
             <asp:QueryStringParameter Name="1" QueryStringField="id" />
         </SelectParameters>
     </asp:SqlDataSource>
+    <br />
+     Các sản phẩm có chung mức giá:<asp:DataList ID="dlist_product" 
+        runat="server" RepeatColumns="4" 
+                RepeatDirection="Horizontal" Width="100%" 
+         onitemcommand="DataList1_ItemCommand" BorderColor="#999966">
+                <SeparatorStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" 
+                    Font-Strikeout="False" Font-Underline="False" />
+                <ItemTemplate>
+                    <table>
+                                <tr style="text-align: center; color: #1500FF; font-weight: bold; font-size: 15px">
+                                    <td style="height: 35px">
+                                        <asp:HyperLink ID="lnk_name" runat="server" 
+                                            NavigateUrl='<%# "ProductDetail.aspx?id="+Eval("id") %>' 
+                                            Text='<%# Eval("name") %>'></asp:HyperLink>
+                                    </td>
+                                </tr>
+                                <tr style="text-align: center">
+                                    <td>
+                                    <a class="item_box" href='<%# "ProductDetail.aspx?id="+Eval("id") %>' >
+                                        <asp:Image ID="Image1" runat="server" BorderColor="#DDDDDD" BorderWidth="1px" 
+                                            ImageUrl='<%# Eval("image") %>' Width="120px" />
+                                    </a>
+                   
+                                    </td>
+                                </tr>
+                                <tr style="text-align: center; color: black; font-weight: bold; font-size: 13px;
+                                    height: 20px">
+                                    <td>
+                                        <small>RAM: 
+                                        <asp:Label ID="lbMaSP" runat="server" 
+                                            Text='<%# Eval("ram") %>'></asp:Label>
+                                    <br />
+                                        Camera:
+                                        <asp:Label ID="lbMaSP0" runat="server" Text='<%# Eval("camera") %>'></asp:Label>
+                                        <br />
+                                        <small>
+                                        <asp:Label ID="lb_id" runat="server" Text='<%# Eval("id") %>' 
+                                            Visible="<%# false %>"></asp:Label>
+                                        </small>
+                                    </small></td>
+                                </tr>
+                                <tr style="text-align: center; color: black; font-weight: bold; font-size: 13px;
+                                    height: 20px">
+                                    <td>
+                                        Giá:
+                                        <asp:Label ID="lb_price" runat="server" Text='<%# Eval("price") %>'></asp:Label>
+                                        &nbsp;đồng</td>
+                                </tr>
+                                <tr style="text-align: center">
+                                    <td>
+                                        <asp:ImageButton  ID="imbAddgio" runat="server" ImageUrl="~/web/images/res/add-to-cart-button-blue.png"
+                                            CommandName="Them" Width="120px" 
+                                            />
+                                    </td>
+                                </tr>
+                            </table>
+                </ItemTemplate>
+            </asp:DataList>
+    <br />
 </asp:Content>

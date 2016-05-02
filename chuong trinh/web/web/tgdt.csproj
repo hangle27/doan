@@ -88,6 +88,13 @@
     <Compile Include="Admin.master.designer.cs">
       <DependentUpon>Admin.master</DependentUpon>
     </Compile>
+    <Compile Include="CustomerManager.aspx.cs">
+      <DependentUpon>CustomerManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerManager.aspx.designer.cs">
+      <DependentUpon>CustomerManager.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CustomerRegister.aspx.cs">
       <DependentUpon>CustomerRegister.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -141,6 +148,7 @@
     <Compile Include="MenuTrai.ascx.designer.cs">
       <DependentUpon>MenuTrai.ascx</DependentUpon>
     </Compile>
+    <Compile Include="MyFunction.cs" />
     <Compile Include="NguoiDung.master.cs">
       <DependentUpon>NguoiDung.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -202,6 +210,20 @@
     <Compile Include="ProductManager.aspx.designer.cs">
       <DependentUpon>ProductManager.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ProductSearch.aspx.cs">
+      <DependentUpon>ProductSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductSearch.aspx.designer.cs">
+      <DependentUpon>ProductSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataBase\SQLite.cs" />
     <Compile Include="Purchase.aspx.cs">
@@ -224,6 +246,13 @@
     </Compile>
     <Compile Include="ShoppingCart.aspx.designer.cs">
       <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statics.aspx.cs">
+      <DependentUpon>Statics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statics.aspx.designer.cs">
+      <DependentUpon>Statics.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserManager.aspx.cs">
       <DependentUpon>UserManager.aspx</DependentUpon>
@@ -255,13 +284,17 @@
     <Content Include="Account.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="Admin.master" />
+    <Content Include="CustomerManager.aspx" />
     <Content Include="CustomerRegister.aspx" />
     <Content Include="ManufactureManager.aspx" />
     <Content Include="OrderDetailManager.aspx" />
     <Content Include="OrderManager.aspx" />
     <Content Include="OrderSuccess.aspx" />
+    <Content Include="ProductSearch.aspx" />
+    <Content Include="Profile.aspx" />
     <Content Include="Purchase.aspx" />
     <Content Include="SessionManager.aspx" />
+    <Content Include="Statics.aspx" />
     <Content Include="UserManager.aspx" />
     <Content Include="web\images\products\7000007.png" />
     <Content Include="web\images\products\7000008.png" />

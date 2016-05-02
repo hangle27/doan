@@ -56,7 +56,8 @@ namespace web
                             { "order_id",   o_id},
                             { "product_id",    cart.table.Rows[i]["product_id"].ToString()},
                             { "quantity",   cart.table.Rows[i]["quantity"].ToString()},
-                            { "price", cart.table.Rows[i]["price"].ToString() }
+                            { "price", cart.table.Rows[i]["price"].ToString() },
+                            { "price_origin", Database.get("product", "price_origin", "id='" + cart.table.Rows[i]["product_id"].ToString() + "'").Rows[0]["price_origin"].ToString() }
                         }
                     );
 

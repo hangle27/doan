@@ -12,17 +12,61 @@ using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using System.Collections.Generic;
 using DataObjects;
+using DataBase;
+using System.Text.RegularExpressions;
 
 public partial class Page_ProductGroup : System.Web.UI.Page
 {
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        /*
+        DataTable t =  Database.get("product", "*");
+        for (int i = 0; i < t.Rows.Count; i++)
+        {
+            String lcd = t.Rows[i]["lcd"].ToString();
+            //String lcd_size = Regex.Match(lcd, "([\\d\\.]+)\\\"").Groups[1].Value;
+            Database.set("product",
+                new Dictionary<string, string>()
+                {
+                    {"id", t.Rows[i]["id"].ToString()}
+                },
+                new Dictionary<string, string>()
+                {
+                    {"lcd_size", getInches(lcd)}
+                }
+            );
+        }
+        */
+
+        DataTable t = Database.get("product", "*");
+        for (int i = 0; i < t.Rows.Count; i++)
+        {
+            String lcd = t.Rows[i]["lcd"].ToString();
+            //String lcd_size = Regex.Match(lcd, "([\\d\\.]+)\\\"").Groups[1].Value;
+            Database.set("product",
+                new Dictionary<string, string>()
+                {
+                    {"id", t.Rows[i]["id"].ToString()}
+                },
+                new Dictionary<string, string>()
+                {
+                    {"price_origin", ((int)(((int)t.Rows[i]["price"]) * 0.7)).ToString()}
+                }
+            );
+        }
+
 
     }
 
+    public static String getInches(String lcd)
+    {
+        String lcd_size = Regex.Match(lcd, "([\\d\\.]+)\\\"").Groups[1].Value;
+        return lcd_size;
+    }
 
-        
+
+
     protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
     {
 

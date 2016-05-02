@@ -57,7 +57,13 @@ namespace web
             object a = e.NewValues;
 
             String p_id = o.table.Rows[e.RowIndex]["product_id"].ToString();
+            
             int new_q = int.Parse(((TextBox)(row.Cells[3].FindControl("TextBox_q"))).Text);
+            if (new_q < 1)
+            {
+                l_msg.Text = "Số lượng phải lớn hơn 0.";
+                return;
+            }
 
             int kq = o.setQuantity(p_id, new_q);
             if (kq < new_q)

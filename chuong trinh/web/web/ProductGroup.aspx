@@ -47,14 +47,16 @@
                                 <tr style="text-align: center; color: black; font-weight: bold; font-size: 13px;
                                     height: 20px">
                                     <td>
-                                        <small>HĐH: <asp:Label ID="lbMaSP" runat="server" 
-                                            Text='<%# Eval("osName") + " " + Eval("os_version") %>'></asp:Label>
+                                        <small>RAM: 
+                                        <asp:Label ID="lbMaSP" runat="server" 
+                                            Text='<%# Eval("ram") %>'></asp:Label>
                                     <br />
-                                        Màn hình:
-                                        <asp:Label ID="lbMaSP0" runat="server" Text='<%# Eval("lcd") %>'></asp:Label>
+                                        Camera:
+                                        <asp:Label ID="lbMaSP0" runat="server" Text='<%# Eval("camera") %>'></asp:Label>
                                         <br />
-                                        ID: <small>
-                                        <asp:Label ID="lb_id" runat="server" Text='<%# Eval("id") %>'></asp:Label>
+                                        <small>
+                                        <asp:Label ID="lb_id" runat="server" Text='<%# Eval("id") %>' 
+                                            Visible="<%# false %>"></asp:Label>
                                         </small>
                                     </small></td>
                                 </tr>

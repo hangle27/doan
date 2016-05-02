@@ -12,6 +12,7 @@ using System.Web.UI.HtmlControls;
 using System.Xml.Linq;
 using DataBase;
 using System.Collections.Generic;
+using DataObjects;
 
 namespace web
 {
@@ -24,6 +25,13 @@ namespace web
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
+            if (Account.exist(input_uname.Value))
+            {
+                t_msg_err.InnerHtml = "<font color='red' >Tên đăng nhập đã tồn tại.</font>";
+                return;
+            }
+
             Database.insert("users",
                 new Dictionary<String, String>()
                 {
@@ -32,7 +40,7 @@ namespace web
                     { "phone",   input_phone.Value},
                     { "email", input_email.Value},
                     { "gender",     select_gender.SelectedValue},
-                    { "type",   "1"},
+                    { "type",   UserType.Customer},
                 }
             );
             //Select last row in a table
@@ -44,15 +52,14 @@ namespace web
                     new Dictionary<String, String>()
                     {
                         { "user_id",   u_id},
-                        { "username",    ""},
-                        { "password",   ""},
-                        { "realname", ""}
+                        { "username",    input_uname.Value},
+                        { "password",   WebAPI.Encrypt.md5(input_upass.Value)},
+                        { "realname", input_name.Value}
                     }
                 );
             }
 
-            Response.Redirect("Account.aspx?action=register&email=" + input_email.Value + "&name=" + input_name.Value);
-
+            t_content.InnerHtml = "Đăng ký thành công. <a href='Account.aspx?action=login'>Đăng nhập</a>";
 
         }
     }

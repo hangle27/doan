@@ -48,13 +48,15 @@
                     <asp:Label ID="Label2" runat="server" 
                         
                         Text='<%# (((bool)Eval("purchased")) ? "Đã" : "Chưa") + " thanh toán" %>' 
-                        ForeColor='<%# ((bool)Eval("purchased")) ? System.Drawing.Color.Green : System.Drawing.Color.Red %>'></asp:Label>
+                        
+                        ForeColor='<%# ((bool)Eval("purchased")) ? System.Drawing.Color.Green : System.Drawing.Color.Brown %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField ShowHeader="False">
                 <ItemTemplate>
                     <asp:HyperLink ID="HyperLink1" runat="server" 
-                        NavigateUrl='<%# "OrderDetailManager.aspx?id=" + Eval("id") %>'>Chi tiết</asp:HyperLink>
+                        NavigateUrl='<%# "OrderDetailManager.aspx?id=" + Eval("id") %>' 
+                        CssClass="underline" Font-Bold="True">Chi tiết</asp:HyperLink>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

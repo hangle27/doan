@@ -18,7 +18,15 @@ namespace web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DataTable u = new DataTable();
+            DataTable t = DataBase.Database.get("product", "*", "id='" + WebAPI.Page._GET("id") + "'");
+            if (t.Rows.Count > 0)
+            {
+                String price = t.Rows[0]["price"].ToString();
+                u = DataBase.Database.get("product", "*", "price >= '" + price + "' - 1000000 AND price <= '" + price + "' + 1000000");
+            }
+            dlist_product.DataSource = u;
+            dlist_product.DataBind();
         }
 
         protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
@@ -36,6 +44,11 @@ namespace web
             }
             cart.Add(pid.Text, pname.Text, price.Text, 1);
             Response.Redirect("ShoppingCart.aspx");
+        }
+
+        protected void dlist_product_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+
         }
     }
 }

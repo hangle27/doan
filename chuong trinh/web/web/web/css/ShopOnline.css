@@ -157,3 +157,23 @@
 item_box:hover {
     border: red solid 1px;
 }
+
+.bold
+{
+    font-weight: bold;
+}
+
+.underline
+{
+    text-decoration: none;
+}
+
+.t
+{
+}
+
+table.t td
+{
+    border: 1px solid #CCC;
+    padding: 5px;
+}

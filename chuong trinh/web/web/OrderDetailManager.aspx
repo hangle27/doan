@@ -3,6 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p>
+        <a href="OrderManager.aspx">&lt;&lt; Trở về</a><br />
+        <br />
         Chi tiết đơn hàng:<br />
         <br />
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
@@ -39,9 +41,21 @@
         </asp:GridView>
     </p>
     <p>
-        <asp:RadioButton ID="RadioButton1" runat="server" GroupName="paid" 
-            oncheckedchanged="RadioButton1_CheckedChanged" />
-        <asp:RadioButton ID="RadioButton2" runat="server" GroupName="paid" />
+        Tình trạng:
+        <asp:DropDownList ID="DropDownList1" runat="server" 
+            DataSourceID="SqlDataSource_tt" DataTextField="name" DataValueField="id">
+        </asp:DropDownList>
+        <asp:DropDownList ID="DropDownList2" runat="server">
+            <asp:ListItem Value="0">Chưa thanh toán</asp:ListItem>
+            <asp:ListItem Value="1">Đã thanh toán</asp:ListItem>
+        </asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource_tt" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:tgdtConnectionString %>" 
+            SelectCommand="SELECT * FROM [status]"></asp:SqlDataSource>
+&nbsp;<br />
+        <br />
+        <asp:Button ID="Button_Apply" runat="server" onclick="Button_Apply_Click" 
+            Text="Áp dụng" />
     </p>
     <p>
         <asp:SqlDataSource ID="SqlDataSource_OrderDetail" runat="server" 
@@ -52,8 +66,6 @@ where order_id=@o_id">
             </SelectParameters>
         </asp:SqlDataSource>
     </p>
-    <br />
-    <asp:CheckBox ID="CheckBox1" runat="server" />
     <br />
     <br />
 </asp:Content>

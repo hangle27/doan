@@ -13,3 +13,8 @@ E:\__DOCUMENT__\__PROGRAMMING\@Projects\Hang Le - website ban dien thoai\doan\ch
 E:\__DOCUMENT__\__PROGRAMMING\@Projects\Hang Le - website ban dien thoai\doan\chuong trinh\web\web\obj\Debug\ResolveAssemblyReference.cache
 E:\__DOCUMENT__\__PROGRAMMING\@Projects\Hang Le - website ban dien thoai\doan\chuong trinh\web\web\obj\Debug\web.dll
 E:\__DOCUMENT__\__PROGRAMMING\@Projects\Hang Le - website ban dien thoai\doan\chuong trinh\web\web\obj\Debug\web.pdb
+E:\@do an\doan\chuong trinh\web\web\bin\web.dll
+E:\@do an\doan\chuong trinh\web\web\bin\web.pdb
+E:\@do an\doan\chuong trinh\web\web\obj\Debug\ResolveAssemblyReference.cache
+E:\@do an\doan\chuong trinh\web\web\obj\Debug\web.dll
+E:\@do an\doan\chuong trinh\web\web\obj\Debug\web.pdb

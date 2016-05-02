@@ -46,6 +46,7 @@
                     </ul>
                 </li>
                 <li><a href="CustomerManager.aspx">Quản lý Khách hàng</a></li>  
+                <li><a href="Statics.aspx">Thống kê</a></li> 
             </ul>
         </div>
             

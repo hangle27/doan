@@ -78,6 +78,7 @@ namespace web
                         { "battery",    input_pin.Value},
                         { "price",  input_price.Value},
                         { "lcd",   input_lcd.Value},
+                        { "lcd_size", MyFunction.getInchFromLCD(input_lcd.Value) },
                         { "image",   input_image.Value},
                         { "quantity",   input_quantity.Value},
                     }
@@ -98,6 +99,7 @@ namespace web
                         { "battery",    input_pin.Value},
                         { "price",  input_price.Value},
                         { "lcd",   input_lcd.Value},
+                        { "lcd_size", MyFunction.getInchFromLCD(input_lcd.Value) },
                         { "image",   input_image.Value},
                         { "quantity",   input_quantity.Value},
                     }

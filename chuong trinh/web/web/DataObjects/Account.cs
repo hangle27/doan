@@ -207,6 +207,12 @@ namespace DataObjects
             return userName;
         }
 
+        public static bool exist(String username)
+        {
+            return Database.get("account", "*", "username='" + username + "'").Rows.Count > 0;
+        }
+
+
 
     }
 }

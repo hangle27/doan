@@ -31,6 +31,7 @@ namespace web
                     },
                 new Dictionary<String, String>()
                     {
+      
                         { "status",   "1"}
                     }
             );
@@ -53,6 +54,23 @@ namespace web
         protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
         {
             
+        }
+
+        protected void Button_Apply_Click(object sender, EventArgs e)
+        {
+
+            DataBase.Database.set("[order]",
+                new Dictionary<String, String>()
+                    {
+                        { "id", WebAPI.Page._GET("id")}
+                    },
+                new Dictionary<String, String>()
+                    {
+                        { "date_end", WebAPI.Coversation.DateTime2SQLFormat(DateTime.Now)},
+                        { "status",   DropDownList1.SelectedValue},
+                        { "purchased",    DropDownList2.SelectedValue}
+                    }
+            );
         }
     }
 }
